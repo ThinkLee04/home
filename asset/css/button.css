@@ -4,97 +4,83 @@
     --white: hsl(334, 7%, 95%);
     --bg: linear-gradient(-45deg, red, blue);
   }
-/* 
-button{
 
-    position: absolute;
-    border: 2px solid white;
-    background: transparent;
-    font-family: 'Roboto', sans-serif;
-    color: white;
-    width: 230px;
-    height: 50px;
-    font-size: 1.1em;
-    border-radius: 12px;
-    opacity: .5;
-    top: 60vh;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    margin: auto;
-    transition: .3s;
-  }
-  
-  button:hover{
-    text-shadow: 0 0 0.3em currentColor;
-    border: 2px solid var(--pink);
-    background-color: hsl(224, 32%, 12%);
-    cursor: pointer;
-    color: var(--teal);;
-    opacity: .8;
-    transition: .3s;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  } */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
-  body {
-    /* font-family: Avenir, sans-serif; */
-    color: white;
-  }
-  
-  a {
+a{
+  margin-top: 11%;
+}
 
-    text-decoration: none;
-    color: inherit;
-  }
+.button {
+  font-family: 'Roboto Mono', monospace;
+  position:relative;
+  margin-top: 0;
+  width: 120px;
+  height: 40px;
+  background-color: hsl(222, 45%, 7%);
+  display: flex;
+  align-items: center;
+  color: #ffff;
+  flex-direction: column;
+  justify-content: center;
+  border: none;
+  padding: 12px;
+  gap: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -4px;
+  top: -1px;
+  margin: auto;
+  width: 128px;
+  height: 48px;
+  border-radius: 10px;
+  background: linear-gradient(-45deg, red, blue);
+  z-index: -10;
+  pointer-events: none;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.button::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, red, blue);
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
+}
+
+.button:hover::after {
+  filter: blur(30px);
+}
+
+.button:hover::before {
+  transform: rotate(-180deg);
+}
+.button:hover {
+  text-shadow: 0 0 0.2em currentColor;
+}
+
+.button:active::before {
+  scale: 0.7;
+}
+
   
-  .cta {
-    font-family: Avenir, sans-serif;
-    position: absolute;
-    margin-top: 90%;
-    padding: 19px 22px;
-    transition: all 0.2s ease;
-  }
-  .cta:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    border-radius: 28px;
-    background: linear-gradient(-45deg, red, blue);
-    width: 56px;
-    height: 56px;
-    transition: all 0.3s ease;
-  }
-  .cta span {
-    position: relative;
-    font-size: 16px;
-    line-height: 18px;
-    font-weight: 900;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    vertical-align: middle;
-  }
-  .cta svg {
-    position: relative;
-    top: 0;
-    margin-left: 10px;
-    fill: none;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke: #ffffff;
-    stroke-width: 2;
-    transform: translateX(-5px);
-    transition: all 0.3s ease;
-  }
-  .cta:hover:before {
-    width: 100%;
-    background: linear-gradient(-45deg, red, blue);
-  }
-  .cta:hover svg {
-    transform: translateX(0);
-    text-shadow: 0 0 0.3em currentColor;
-  }
-  .cta:active {
-    transform: scale(0.96);
-  }
+a:link { text-decoration: none; }
+
+
+a:visited { text-decoration: none; }
+
+
+a:hover { text-decoration: none; }
+
+
+a:active { text-decoration: none; }
