@@ -6,13 +6,13 @@
   
   
   body {
-    background: hsl(224, 32%, 12%);
+    background: #898076;
     background-image: conic-gradient(
       from 0deg at 50% 50%,
-      blue,
-      purple,
-      purple,
-      blue
+      #898076,
+      #baaea1,
+      #baaea1,
+      #898076,
     );
     background-blend-mode: multiply;
     /* min-block-size: 100dvh; */
@@ -66,16 +66,16 @@
   pre::after {
     z-index: -2;
     inset: -1rem;
-    background: linear-gradient(-45deg, red, blue);
+    background: linear-gradient(-45deg, #eedac6, #84623a);
     transform: translateZ(-50px);
   }
   
   .selector {
-    color: var(--selector);
+    color: #898076;
   }
   
   .property {
-    color: var(--property);
+    color: #d6c8b9;
   }
   
   .pre-container {
